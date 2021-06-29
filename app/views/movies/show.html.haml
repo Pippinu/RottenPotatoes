@@ -12,4 +12,10 @@
 
 %p#description= @movie.description
 
+-# edit_movie_path(@movie) and @movies_path(@movie) substitute with "/movies/#{@movie.id}" because the first 2 
+-# were /movies.:id instead of /movies/id
+= link_to 'Edit info', "/movies/#{@movie.id}"
+%br
+= link_to 'Remove from movie list', "/movies/#{@movie.id}", :method => :delete
+%br
 = link_to 'Back to movie list', movies_path
